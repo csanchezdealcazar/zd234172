@@ -1,0 +1,22 @@
+removeStrategy:
+  rbac: UPDATE
+groups:
+  - name: Administrators
+    roles:
+      - name: administer
+        grantedAt: current 
+    members:
+      users:
+        - admin
+  - name: Developers
+    roles:  
+      - name: developer
+    members:
+      users:
+        - developer
+  - name: Browsers
+    roles:
+      - name: browser
+    members:
+      users:
+        - browser
