@@ -1,0 +1,10 @@
+removeStrategy:
+  rbac: UPDATE
+groups:
+- name: studio-administrators
+  roles:
+  - name: studio-admin
+    grantedAt: current
+  members:
+    users:
+    - admin.user
