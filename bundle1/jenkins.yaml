@@ -1,0 +1,252 @@
+jenkins:
+  noUsageStatistics: true
+  agentProtocols:
+  - "Diagnostic-Ping"
+  - "JNLP4-connect"
+  - "OperationsCenter2"
+  - "Ping"
+  authorizationStrategy: "cloudBeesRoleBasedAccessControl"
+  crumbIssuer:
+    standard:
+      excludeClientIPFromCrumb: true
+  disableRememberMe: false
+  disabledAdministrativeMonitors:
+  - "jenkins.diagnostics.ControllerExecutorsAgents"
+  labelString: "built-in"
+  mode: EXCLUSIVE
+  numExecutors: 2
+  myViewsTabBar: "standard"
+  primaryView:
+    all:
+      name: "all"
+  projectNamingStrategy: "standard"
+  quietPeriod: 5
+  remotingSecurity:
+    enabled: true
+  scmCheckoutRetryCount: 0
+  securityRealm: "operationsCenter"
+  systemMessage: "Controller configured by CASC"
+  updateCenter:
+    sites:
+    - id: "virtual-cap-core-mm"
+      url: "https://jenkins-updates.cloudbees.com/update-center/envelope-core-mm/update-center.json"
+beekeeper:
+  enabled: true
+  securityWarnings:
+    enabledForCore: true
+    enabledForPlugins: true
+  upgrades:
+    autoDowngradePlugins: true
+    autoUpgradePlugins: true
+security:
+  anonymizeSupportBundle:
+    enabled: false
+  apiToken:
+    creationOfLegacyTokenEnabled: false
+    tokenGenerationOnCreationEnabled: false
+    usageStatisticsEnabled: true
+  sSHD:
+    port: -1
+unclassified:
+  buildFailureAnalyzer:
+    doNotAnalyzeAbortedJob: false
+    globalEnabled: true
+    graphsEnabled: false
+    knowledgeBase:
+      mongoDB:
+        dbName: "jenkins"
+        enableStatistics: true
+        host: "myhost"
+        port: 12345
+        successfulLogging: true
+        userName: "jenkinsAdmin"
+        password: "mypass"
+    maxLogSize: 0
+    noCausesEnabled: true
+    noCausesMessage: "No problems were identified. If you know why this problem occurred,\
+      \ please add a suitable Cause for it."
+    nrOfScanThreads: 5
+    sodVariables:
+      maximumSodWorkerThreads: 2
+    testResultParsingEnabled: false
+cloudbees-monitoring:
+  conditionList:
+  - individualHealthCheck:
+      alertAfter: "5sec"
+      name: "controller-health"
+      recipientList:
+      - email:
+          emailAddresses: "test@test.com"
+          subjectPrefix: "Jenkins Alert using bundle: evmng"
+advisor:
+  acceptToS: True
+  email: "test@test.com"
+  ccs:
+  - "test@test.com"
+  excludedComponents:
+  - "AgentsSystemConfiguration"
+  - "AgentsJVMProcessSystemMetricsContents"
+  - "GCLogs"
+  - "AgentsConfigFile"
+  - "ConfigFileComponent"
+  - "RootCAs"
+  - "SlaveLogs"
+  - "OtherConfigFilesComponent"
+  - "HeapUsageHistogram"
+  - "OtherLogs"
+  nagDisabled: False
+security:
+  scriptApproval:
+    approvedSignatures:
+    - field hudson.model.Slave name
+    - field jenkins.model.Jenkins clouds
+    - method hudson.model.Hudson getSlaves
+    - method hudson.model.Run getCause java.lang.Class
+    - method hudson.util.PersistedList getAll java.lang.Class
+    - method org.jenkinsci.plugins.workflow.support.actions.EnvironmentAction getEnvironment
+    - method org.jenkinsci.plugins.workflow.support.steps.build.RunWrapper getRawBuild
+    - staticMethod hudson.model.Hudson getInstance
+    - staticMethod jenkins.model.Jenkins getInstance
+    - method org.jenkinsci.plugins.vSphereCloud getTemplates
+    - method org.jenkinsci.plugins.vSphereCloud getVsDescription
+    - method org.jenkinsci.plugins.vSphereCloudSlaveTemplate getMasterImageName
+    - new hudson.AbortException java.lang.String
+    - staticMethod io.jenkins.plugins.casc.ConfigurationAsCode get
+    - method io.jenkins.plugins.casc.ConfigurationAsCode configure
+    - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods println groovy.lang.Closure java.lang.Object
+    - new hudson.plugins.sshslaves.verifiers.NonVerifyingKeyVerificationStrategy
+    - new hudson.plugins.sshslaves.SSHLauncher java.lang.String int java.lang.String java.lang.String java.lang.String java.lang.String java.lang.String java.lang.Integer java.lang.Integer java.lang.Integer hudson.plugins.sshslaves.verifiers.SshHostKeyVerificationStrategy
+    - new hudson.slaves.DumbSlave java.lang.String java.lang.String hudson.slaves.ComputerLauncher
+    - method hudson.model.Slave setNodeDescription java.lang.String
+    - method hudson.model.Slave setNumExecutors int
+    - method hudson.model.Node setLabelString java.lang.String
+    - staticField hudson.model.Node$Mode EXCLUSIVE
+    - method hudson.model.Slave setMode hudson.model.Node$Mode
+    - new hudson.slaves.RetentionStrategy$Always
+    - method hudson.model.Slave setRetentionStrategy hudson.slaves.RetentionStrategy
+    - method jenkins.model.Jenkins addNode hudson.model.Node
+    - method jenkins.model.Jenkins getComputer java.lang.String
+    - method hudson.model.Computer isOnline
+    - method hudson.model.AbstractCIBase getNodes
+    - method jenkins.model.Jenkins removeNode hudson.model.Node
+    - method org.jenkinsci.plugins.vSphereCloudSlaveTemplate getCloneNamePrefix
+    - method hudson.model.Slave getComputer
+    - method hudson.model.Node getLabelString
+    - new java.util.LinkedHashMap
+    - staticMethod org.codehaus.groovy.transform.ImmutableASTTransformation checkPropNames java.lang.Object java.util.Map
+    - staticMethod hudson.model.User current
+    - new hudson.slaves.OfflineCause$UserCause hudson.model.User java.lang.String
+    - method hudson.model.Computer setTemporarilyOffline boolean hudson.slaves.OfflineCause
+    - method hudson.model.Computer countBusy
+    - method hudson.model.Computer getHostName
+    - new com.cloudbees.jenkins.plugins.sshslaves.verification.TrustInitialConnectionVerificationStrategy boolean
+    - new com.cloudbees.jenkins.plugins.sshslaves.SSHConnectionDetails java.lang.String int java.lang.String java.lang.String java.lang.String java.lang.String boolean com.cloudbees.jenkins.plugins.sshslaves.verification.ServerKeyVerificationStrategy
+    - new com.cloudbees.jenkins.plugins.sshslaves.SSHLauncher java.lang.String com.cloudbees.jenkins.plugins.sshslaves.SSHConnectionDetails
+    - field hudson.model.Slave numExecutors
+    - new hudson.AbortException
+    - new com.cloudbees.jenkins.plugins.sshslaves.verification.BlindTrustConnectionVerificationStrategy
+    - method hudson.model.Computer isUnix
+    - method hudson.model.Node createPath java.lang.String
+    - method hudson.FilePath isDirectory
+    - method hudson.FilePath exists
+    - method jenkins.model.Jenkins getNode java.lang.String
+    - new java.io.ByteArrayOutputStream
+    - new hudson.util.StreamTaskListener java.io.OutputStream
+    - method hudson.model.Node createLauncher hudson.model.TaskListener
+    - method hudson.Launcher launch
+    - method hudson.Launcher$ProcStarter cmdAsSingleString java.lang.String
+    - method hudson.Launcher$ProcStarter stdout hudson.model.TaskListener
+    - method hudson.Launcher launch hudson.Launcher$ProcStarter
+    - method hudson.Proc join
+tool:
+  ant:
+    installations:
+    - name: ANT_1.8.4
+      properties:
+      - installSource:
+          installers:
+          - antFromApache:
+              id: 1.8.4
+    - name: ANT_1.9.4
+      properties:
+      - installSource:
+          installers:
+          - antFromApache:
+              id: 1.9.4
+    - name: ANT_1.9.6
+      properties:
+      - installSource:
+          installers:
+          - antFromApache:
+              id: 1.9.6
+  cloudbeesPluginUsageAnalyzer:
+    enabled: true
+  git:
+    installations:
+    - home: git
+      name: Default
+  jdk:
+    installations:
+    - name: Jdk8-latest
+      properties:
+      - installSource:
+          installers:
+          - jdkInstaller:
+              acceptLicense: true
+              id: jdk-8-oth-JPR
+    - name: Jdk8_u181
+      properties:
+      - installSource:
+          installers:
+          - jdkInstaller:
+              acceptLicense: true
+              id: jdk-8u181-oth-JPR
+    - name: Jdk8_u162
+      properties:
+      - installSource:
+          installers:
+          - jdkInstaller:
+              acceptLicense: true
+              id: jdk-8u162-oth-JPR
+    - name: Jdk9_04
+      properties:
+      - installSource:
+          installers:
+          - jdkInstaller:
+              acceptLicense: true
+              id: jdk-9.0.4-oth-JPR
+  maven:
+    installations:
+    - name: maven2
+      properties:
+      - installSource:
+          installers:
+          - maven:
+              id: 2.2.1
+    - name: maven3
+      properties:
+      - installSource:
+          installers:
+          - maven:
+              id: 3.3.9
+    - name: maven_3.2.5
+      properties:
+      - installSource:
+          installers:
+          - maven:
+              id: 3.2.5
+    - name: maven_3.3.3
+      properties:
+      - installSource:
+          installers:
+          - maven:
+              id: 3.3.3
+    - name: maven_3.6.0
+      properties:
+      - installSource:
+          installers:
+          - maven:
+              id: 3.6.0
+  mavenGlobalConfig:
+    globalSettingsProvider: standard
+    settingsProvider: standard
