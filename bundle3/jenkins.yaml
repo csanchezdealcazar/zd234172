@@ -1,0 +1,677 @@
+
+jenkins:
+  agentProtocols:
+  - "Diagnostic-Ping"
+  - "JNLP4-connect"
+  - "OperationsCenter2"
+  - "Ping"
+  crumbIssuer:
+    standard:
+      excludeClientIPFromCrumb: true
+  disableRememberMe: false
+  globalNodeProperties:
+  - envVars:
+      env:
+      - key: "BUILDTOOLS1_URL"
+        value: "https://buildtools1backend.service-now.com"
+      - key: "BUILDTOOLS1_USER"
+        value: "glide.publish"
+      - key: "CI"
+        value: "true"
+      - key: "FIREFOX_57_BIN"
+        value: "/mnt/jenkins/tools/firefox/firefox-57.0.1/firefox"
+      - key: "FIREFOX_65_BIN"
+        value: "/mnt/jenkins/tools/firefox/firefox-65.0.2/firefox"
+      - key: "FIREFOX_68_BIN"
+        value: "/mnt/jenkins/tools/firefox/firefox-68.1.0esr/firefox"
+      - key: "FIREFOX_78_BIN"
+        value: "/mnt/jenkins/tools/firefox/firefox-78.5.0esr/firefox"
+      - key: "FIREFOX_91_BIN"
+        value: "/mnt/jenkins/tools/firefox/firefox-91.2.0esr/firefox"
+      - key: "FIREFOX_LATEST_BIN"
+        value: "/mnt/jenkins/tools/firefox/firefox-78.5.0esr/firefox"
+      - key: "GIT_URL_BASE"
+        value: "ssh://code.devsnc.com"
+      - key: "GITHUB_API_ENDPOINT"
+        value: "https://code.devsnc.com/api/v3"
+      - key: "GITHUB_CODE_PUSH_CREDENTIALS"
+        value: "github-code-push-credentials"
+      - key: "HI_URL"
+        value: "https://hiworker.service-now.com"
+      - key: "JAVA_TOOL_OPTIONS"
+        value: "-Dfile.encoding=UTF-8 -Dsun.jnu.encoding=UTF-8"
+      - key: "JBUILDER_IGNORE_WEIGHT"
+        value: "true"
+      - key: "JBUILDER_JOB_TYPE_TEST_MASTER"
+        value: "freeStyleJob"
+      - key: "JOB_GENERATOR_USER"
+        value: "system.jenkinsjobman"
+          \ {arch}"
+      - key: "NPM_MIRROR_URL"
+        value: "http://artifact-npm-proxy.int.devsnc.com:8081"
+      - key: "NPM_PROXY_EXTERNAL_HOST"
+        value: "artifact.devsnc.com/content/groups/npm-all/"
+      - key: "NPM_PROXY_INTERNAL_HOST"
+        value: "artifact-npm-proxy.int.devsnc.com:8081/content/groups/npm-all/"
+      - key: "NPM_PUBLISH_URL"
+        value: "http://artifact-npm.int.devsnc.com:8081"
+      - key: "NPM_SNAPSHOT_PUBLISH_URL"
+        value: "http://artifact-npm.int.devsnc.com:8081/content/repositories/snc-npm-releases/"
+      - key: "SNC_GIT_FETCH_URL"
+        value: "ssh://code.devsnc.com/dev"
+      - key: "SNC_GIT_PUSH_URL"
+        value: "ssh://code.devsnc.com/dev"
+      - key: "SNC_GIT_SERVER"
+        value: "code.devsnc.com"
+      - key: "SNC_GIT_VIEW_URL"
+        value: "https://code.devsnc.com/dev"
+      - key: "SNC_GITHUB_SSH_URL"
+        value: "ssh://code.devsnc.com"
+      - key: "SNC_GITHUB_URL"
+        value: "https://code.devsnc.com"
+      - key: "SNC_JOBS_BRANCH"
+        value: "master"
+      - key: "SONARQUBE_URL"
+        value: "https://metrics.devsnc.com"
+  labelAtoms:
+  - name: "agent-db-mariadb-preview"
+  - name: "agent-db-not-to-be-used-directly"
+  - name: "agent-it-base-not-to-be-used-directly"
+  - name: "agent-it-minio"
+  - name: "agent-it-pgdb-base-do-not-use-directly"
+  - name: "agent-minio-it"
+  - name: "agent-samuraidb"
+  - name: "agent-samuraidb-preview"
+  - name: "agent-samuraidb10-4-preview"
+  - name: "agent-tembo-base-do-not-use-directly"
+  - name: "buildeng-automation"
+  - name: "buildeng-automation2"
+  - name: "chrome"
+  - name: "chrome-next"
+  - name: "ci"
+  - name: "ci-debug"
+  - name: "ci-large"
+  - name: "ci-shared"
+  - name: "codesign-k8s-agent"
+  - name: "db-reserved"
+  - name: "db-reserved-pg"
+  - name: "dind"
+  - name: "dind-not-to-be-used-directly"
+  - name: "dita"
+  - name: "dita-large"
+  - name: "do-not-use-directly-only-from-ml-naginy-pods"
+  - name: "donot-use-directly-only-from-ml-nagini-base"
+  - name: "glide-db-dump"
+  - name: "glide-db-dump-pg"
+  - name: "glide-metadata"
+  - name: "golang"
+  - name: "hi-prod"
+  - name: "hi-test"
+  - name: "hi-test2"
+  - name: "it"
+  - name: "it-consolidated"
+  - name: "it-debug"
+  - name: "it-external-storage"
+  - name: "it-jdk-preview"
+  - name: "it-jdk-preview12g"
+  - name: "it-jdk-preview16g"
+  - name: "it-jdk-preview32g"
+  - name: "it-jdk-preview8g"
+  - name: "it-jdk-preview8g3cpu"
+  - name: "it-jdk11"
+  - name: "it-jdk8-test"
+  - name: "it-jdk8-test12g"
+  - name: "it-mdb-preview"
+  - name: "it-minio"
+  - name: "it-preview"
+  - name: "it-samuraidb"
+  - name: "it-samuraidb-preview"
+  - name: "it-samuraidb10-4-preview"
+  - name: "it-shared"
+  - name: "it12g"
+  - name: "it16g"
+  - name: "it32g"
+  - name: "it4g"
+  - name: "it8g"
+  - name: "it8g3cpu"
+  - name: "itpg"
+  - name: "itpg12g"
+  - name: "itpg16g"
+  - name: "itpg32g"
+  - name: "itpg8g"
+  - name: "itpg8g3cpu"
+  - name: "ittembo"
+  - name: "ittembo12g"
+  - name: "ittembo16g"
+  - name: "ittembo32g"
+  - name: "ittembo8g"
+  - name: "ittembo8g3cpu"
+  - name: "jdk11-preview"
+  - name: "jdk11-preview12g"
+  - name: "jdk11-preview16g"
+  - name: "jdk11-preview32g"
+  - name: "jdk8-new"
+  - name: "jdk8-preview"
+  - name: "jdk8-preview12g"
+  - name: "jnlp-consolidated"
+  - name: "k8s-namespace"
+  - name: "kubectl"
+  - name: "master"
+  - name: "ml-nagini-prod-large"
+  - name: "ml-nagini-qe-large"
+  - name: "ml-nagini-qe-large-tokyo"
+  - name: "ml-test"
+  - name: "mysql"
+  - name: "not-to-be-used-directly"
+  - name: "not-use-directly"
+  - name: "postgres-13.4-snapshot-db"
+  - name: "postgres-13.4-snapshot-it"
+  - name: "postgres-13.4-snapshot-it12g"
+  - name: "postgres-13.4-snapshot-it16g"
+  - name: "postgres-13.4-snapshot-it32g"
+  - name: "postgres-13.4-snapshot-it8g"
+  - name: "postgres-13.4-snapshot-it8g3cpu"
+  - name: "release"
+  - name: "release-db"
+  - name: "release-seismic"
+  - name: "release-shared"
+  - name: "release-started"
+  - name: "release-transfer"
+  - name: "release-validate"
+  - name: "reserved"
+  - name: "reserved-mdb-preview"
+  - name: "reserved-pg12g"
+  - name: "reserved-pg16g"
+  - name: "reserved-pg32g"
+  - name: "reserved-pg8g"
+  - name: "reserved-samuraidb"
+  - name: "reserved-samuraidb-preview"
+  - name: "reserved-samuraidb10-4-preview"
+  - name: "root-pod-template"
+  - name: "samurai-10.5-snapshot-db"
+  - name: "samurai-10.5-snapshot-it"
+  - name: "samurai-10.5-snapshot-it12g"
+  - name: "samurai-10.5-snapshot-it16g"
+  - name: "samurai-10.5-snapshot-it32g"
+  - name: "samurai-10.5-snapshot-it8g"
+  - name: "samurai-10.5-snapshot-it8g3cpu"
+  - name: "samurai-10.6-snapshot-db"
+  - name: "samurai-10.6-snapshot-it"
+  - name: "samurai-10.6-snapshot-it12g"
+  - name: "samurai-10.6-snapshot-it16g"
+  - name: "samurai-10.6-snapshot-it32g"
+  - name: "samurai-10.6-snapshot-it8g"
+  - name: "samurai-10.6-snapshot-it8g3cpu"
+  - name: "scan-instance"
+  - name: "sdb104p"
+  - name: "sdb104p12g"
+  - name: "sdb104p16g"
+  - name: "sdb104p32g"
+  - name: "sdb104p8g"
+  - name: "sdb104p8g3cpu"
+  - name: "sdb2p"
+  - name: "sdb2p12g"
+  - name: "sdb2p16g"
+  - name: "sdb2p32g"
+  - name: "sdb2p8g"
+  - name: "sdb2p8g3cpu"
+  - name: "self-service"
+  - name: "sh"
+  - name: "shared"
+  - name: "shell"
+  - name: "slow"
+  - name: "slow-mdb-preview"
+  - name: "slow-pg12g"
+  - name: "slow-pg16g"
+  - name: "slow-pg32g"
+  - name: "slow-pg8g"
+  - name: "slow-samuraidb"
+  - name: "slow-samuraidb-preview"
+  - name: "slow-samuraidb10-4-preview"
+  - name: "smart-build-co"
+  - name: "snc-dind"
+  - name: "snc-dind-preview"
+  - name: "surf-prod"
+  - name: "surf-test"
+  - name: "teams-obs-0"
+  - name: "tembo-14.4-snapshot-db"
+  - name: "tembo-14.4-snapshot-it"
+  - name: "tembo-14.4-snapshot-it12g"
+  - name: "tembo-14.4-snapshot-it16g"
+  - name: "tembo-14.4-snapshot-it32g"
+  - name: "tembo-14.4-snapshot-it8g"
+  - name: "tembo-14.4-snapshot-it8g3cpu"
+  - name: "tembo-db"
+  - name: "uber"
+  markupFormatter: "plainText"
+  mode: EXCLUSIVE
+  myViewsTabBar: "standard"
+  noUsageStatistics: true
+  numExecutors: 0
+  primaryView:
+    all:
+      name: "all"
+  projectNamingStrategy: "standard"
+  quietPeriod: 0
+  remotingSecurity:
+    enabled: true
+  scmCheckoutRetryCount: 0
+  securityRealm: "operationsCenter"
+  authorizationStrategy: "cloudBeesRoleBasedAccessControl"
+  slaveAgentPort: 50000
+  systemMessage: |
+    == ServiceNow Team Jenkins ==
+  updateCenter:
+    sites:
+    - id: "core-mm-offline"
+      url: "file:/tmp/jenkins/war/WEB-INF/plugins/update-center.json"
+    - id: "cap-core-mm"
+      url: "https://jenkins-updates.cloudbees.com/update-center/envelope-core-mm/update-center.json"
+  views:
+  - all:
+      name: "all"
+  viewsTabBar: "standard"
+beekeeper:
+  enabled: true
+  securityWarnings:
+    enabledForCore: true
+    enabledForPlugins: true
+  upgrades:
+    autoDowngradePlugins: true
+    autoUpgradePlugins: false
+notificationConfiguration:
+  enabled: false
+kube:
+  podTemplatesConfiguration:
+    templates: []
+aws:
+  awsCredentials:
+    region: "us-west-2"
+  s3:
+    container: "devsnc-jenkins-build-artifacts"
+    disableSessionToken: false
+    prefix: "builds/"
+    useHttp: false
+    usePathStyleUrl: false
+security:
+  anonymizeSupportBundle:
+    enabled: false
+  apiToken:
+    creationOfLegacyTokenEnabled: false
+    tokenGenerationOnCreationEnabled: false
+    usageStatisticsEnabled: true
+  envInject:
+    enableLoadingFromMaster: false
+    enablePermissions: false
+    hideInjectedVars: false
+  globalJobDslSecurityConfiguration:
+    useScriptSecurity: false
+  sSHD:
+    port: -1
+  scriptApproval:
+    approvedSignatures:
+    - "field org.jenkinsci.plugins.workflow.cps.ContextVariableSet values"
+    - "method hudson.model.Computer getNode"
+    - "method org.jenkinsci.plugins.workflow.cps.CpsThread getContextVariables"
+    - "method org.jenkinsci.plugins.workflow.support.actions.EnvironmentAction getEnvironment"
+    - "staticMethod java.lang.System getenv"
+    - "staticMethod java.lang.Thread currentThread"
+    - "staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods execute java.lang.String"
+    - "staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods execute java.util.List"
+    - "staticMethod org.codehaus.groovy.runtime.ProcessGroovyMethods consumeProcessOutput\
+      \ java.lang.Process java.lang.Appendable java.lang.Appendable"
+    - "staticMethod org.codehaus.groovy.runtime.ProcessGroovyMethods waitForOrKill\
+      \ java.lang.Process long"
+    - "staticMethod org.jenkinsci.plugins.workflow.cps.CpsThread current"
+unclassified:
+  ansiColorBuildWrapper:
+    colorMaps:
+    - black: "#000000"
+      blackB: "#4C4C4C"
+      blue: "#1E90FF"
+      blueB: "#4682B4"
+      cyan: "#00CDCD"
+      cyanB: "#00FFFF"
+      green: "#00CD00"
+      greenB: "#00FF00"
+      magenta: "#CD00CD"
+      magentaB: "#FF00FF"
+      name: "xterm"
+      red: "#CD0000"
+      redB: "#FF0000"
+      white: "#E5E5E5"
+      whiteB: "#FFFFFF"
+      yellow: "#CDCD00"
+      yellowB: "#FFFF00"
+    - black: "#000000"
+      blackB: "#555555"
+      blue: "#0000AA"
+      blueB: "#5555FF"
+      cyan: "#00AAAA"
+      cyanB: "#55FFFF"
+      defaultBackground: 0
+      defaultForeground: 7
+      green: "#00AA00"
+      greenB: "#55FF55"
+      magenta: "#AA00AA"
+      magentaB: "#FF55FF"
+      name: "vga"
+      red: "#AA0000"
+      redB: "#FF5555"
+      white: "#AAAAAA"
+      whiteB: "#FFFFFF"
+      yellow: "#AA5500"
+      yellowB: "#FFFF55"
+    - black: "black"
+      blackB: "black"
+      blue: "blue"
+      blueB: "blue"
+      cyan: "cyan"
+      cyanB: "cyan"
+      green: "green"
+      greenB: "green"
+      magenta: "magenta"
+      magentaB: "magenta"
+      name: "css"
+      red: "red"
+      redB: "red"
+      white: "white"
+      whiteB: "white"
+      yellow: "yellow"
+      yellowB: "yellow"
+    - black: "#2E3436"
+      blackB: "#2E3436"
+      blue: "#3465A4"
+      blueB: "#3465A4"
+      cyan: "#06989A"
+      cyanB: "#06989A"
+      defaultBackground: 0
+      defaultForeground: 7
+      green: "#4E9A06"
+      greenB: "#4E9A06"
+      magenta: "#75507B"
+      magentaB: "#75507B"
+      name: "gnome-terminal"
+      red: "#CC0000"
+      redB: "#CC0000"
+      white: "#D3D7CF"
+      whiteB: "#D3D7CF"
+      yellow: "#C4A000"
+      yellowB: "#C4A000"
+  artifactManager:
+    artifactManagerFactories:
+    - jclouds:
+        provider: "s3"
+  audit-trail:
+    logBuildCause: true
+    pattern: ".*/(?:configSubmit|doDelete|postBuildResult|enable|disable|cancelQueue|stop|toggleLogKeep|doWipeOutWorkspace|createItem|createView|toggleOffline|cancelQuietDown|quietDown|restart|exit|safeExit)/?.*"
+  bitbucketEndpointConfiguration:
+    endpoints:
+    - bitbucketCloudEndpoint:
+        enableCache: false
+        manageHooks: false
+        repositoriesCacheDuration: 0
+        teamCacheDuration: 0
+  buildDiscarders:
+    configuredBuildDiscarders:
+    - "jobBuildDiscarder"
+  buildFailureAnalyzer:
+    doNotAnalyzeAbortedJob: false
+    gerritTriggerEnabled: true
+    globalEnabled: true
+    graphsEnabled: false
+    knowledgeBase: "localFile"
+    maxLogSize: 0
+    noCausesEnabled: true
+    noCausesMessage: "No problems were identified. If you know why this problem occurred,\
+      \ please add a suitable Cause for it."
+    nrOfScanThreads: 3
+    slackFailureCategories: "ALL"
+    slackNotifEnabled: false
+    testResultParsingEnabled: false
+  buildStepOperation:
+    enabled: false
+  descriptionSetterWrapper:
+    charset: "UTF-8"
+    disableTokens: false
+  email-ext:
+    addAccounts:
+    - address: "mail.int.devsnc.com"
+      smtpHost: "mail.int.devsnc.com"
+    adminRequiredForTemplateTesting: false
+    allowUnregisteredEnabled: false
+    allowedDomains: "servicenow.com, onmicrosoft.com"
+    charset: "UTF-8"
+    debugMode: false
+    defaultBody: "$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:\r\n\r\nCheck\
+      \ console output at $BUILD_URL to view the results."
+    defaultContentType: "text/html"
+    defaultRecipients: "buildeng@servicenow.com"
+    defaultReplyTo: "buildeng@servicenow.com"
+    defaultSubject: "[Jenkins] $PROJECT_NAME Build # $BUILD_NUMBER - $BUILD_STATUS!"
+    defaultSuffix: "@servicenow.com"
+    defaultTriggerIds:
+    - "hudson.plugins.emailext.plugins.trigger.FailureTrigger"
+    listId: "\"BuildEng\" <buildeng@servicenow.com>"
+    mailAccount:
+      smtpHost: "mail.int.devsnc.com"
+    maxAttachmentSize: -1
+    maxAttachmentSizeMb: -1
+    precedenceBulk: false
+    watchingEnabled: false
+  experimentalPlugins:
+    enabled: false
+  fingerprints:
+    fingerprintCleanupDisabled: false
+    storage: "file"
+  gitHubConfiguration:
+    apiRateLimitChecker: ThrottleForNormalize
+    endpoints:
+    - apiUri: "https://code.devsnc.com/api/v3"
+      name: "code.devsnc.com"
+  gitHubPluginConfig:
+    configs:
+    - apiUrl: "https://code.devsnc.com/api/v3"
+      credentialsId: "github-commit-status"
+      manageHooks: false
+      name: "code.devsnc.com"
+  gitSCM:
+    addGitTagAction: false
+    allowSecondFetch: false
+    createAccountBasedOnEmail: false
+    disableGitToolChooser: false
+    hideCredentials: false
+    showEntireCommitSummaryInChanges: false
+    useExistingAccountWithSameEmail: false
+  globalDefaultFlowDurabilityLevel:
+    durabilityHint: PERFORMANCE_OPTIMIZED
+  globalLibraries:
+    libraries:
+    - defaultVersion: "master"
+      includeInChangesets: false
+      name: "sncPipelineLib"
+      retriever:
+        modernSCM:
+          scm:
+            git:
+              id: "ea0e1f8b-3056-45d2-9b62-a1c3592de34c"
+              remote: "ssh://code.devsnc.com/dev/snc-pipelineLib.git"
+    - defaultVersion: "master"
+      includeInChangesets: false
+      name: "sncPipelines"
+      retriever:
+        modernSCM:
+          scm:
+            git:
+              id: "0894ec1f-c02c-48ba-b168-de0f8f576314"
+              remote: "ssh://code.devsnc.com/buildeng/snc-pipelines.git"
+    - defaultVersion: "master"
+      includeInChangesets: false
+      name: "snc-jenkins-pipelines"
+      retriever:
+        modernSCM:
+          scm:
+            git:
+              id: "a7963445-06c5-4346-a2ab-1f5ca9cb07a9"
+              remote: "ssh://code.devsnc.com/buildeng/snc-jenkins-pipelines.git"
+    - defaultVersion: "snc-release/v1.0.0"
+      includeInChangesets: false
+      name: "mpl"
+      retriever:
+        modernSCM:
+          scm:
+            git:
+              id: "b2e86953-aeec-4c5a-8a04-bf3a0b997a6a"
+              remote: "ssh://code.devsnc.com/buildeng/mpl.git"
+  globalSettings:
+    failOnCorrupt: false
+    noAuthors: false
+    quietMode: false
+  junitTestResultStorage:
+    storage: "file"
+  location:
+    adminAddress: "BuildEng <buildeng@servicenow.com>"
+    #url: "https://build-test.devsnc.com/teams-casc-poc/"
+  mailer:
+    charset: "UTF-8"
+    defaultSuffix: "@servicenow.com"
+    replyToAddress: "buildeng@servicenow.com"
+    smtpHost: "mail.int.devsnc.com"
+    useSsl: false
+    useTls: false
+  mavenModuleSet:
+    localRepository: "default"
+  naginatorPublisher:
+    regexpTimeoutMs: 30000
+  pollSCM:
+    pollingThreadCount: 10
+  prometheusConfiguration:
+    collectingMetricsPeriodInSeconds: 120
+    countAbortedBuilds: true
+    countFailedBuilds: true
+    countNotBuiltBuilds: true
+    countSuccessfulBuilds: true
+    countUnstableBuilds: true
+    defaultNamespace: "default"
+    fetchTestResults: true
+    jobAttributeName: "jenkins_job"
+    path: "prometheus"
+    processingDisabledBuilds: false
+    useAuthenticatedEndpoint: false
+  sdlcBuildNotifierAdv:
+    credentialsId: "bt1-publisher"
+    debugEnabled: false
+    serviceNowUrl: "https://buildtools1backend.service-now.com"
+    template: |-
+      <?xml version="1.1" encoding="UTF-8"?>
+      <sdlc-results>
+        <test-suite timestamp="^${timestamp}"
+          id="^${PROJECT_ID}"
+          buildNumber="^${GIT_REVISION}"
+          buildUrl="^${BUILD_URL}"
+          buildScmBranch="^${GIT_BRANCH}"
+          glide.version="^${ENV,var="glide_version"}"
+          custom.profile.name="^${ENV,var="custom_profile"}"
+          jenkinsNodeName="^${NODE_NAME}"
+          request.id="^${ENV,var="request_id"}"
+          version="^${ENV,var="glide_version"}"
+          buildStatus="^${BUILD_RESULT}"
+          isNightly="^${NIGHTLY_FLAG}"
+          nightlyBuild="^${NIGHTLY_FLAG}"
+          buildParameters='^${BUILD_PARAMETERS,exclude=".*pass(word)?"}'>
+          <failure><![CDATA[^${BUILD_LOG}]]></failure>
+        </test-suite>
+      </sdlc-results>
+    topic: "SdlcMavenPlugin"
+  sonarGlobalConfiguration:
+    buildWrapperEnabled: false
+    installations:
+    - additionalProperties: "-Psonarpublish -Dsonar.findbugs.timeout=1800000 -Dmaven.test.failure.ignore=true"
+      credentialsId: "{AQAAABAAAA=}"
+      name: "metrics.devsnc.com"
+      serverAuthenticationToken: "{XXXXXXXXXXXXXXXXXXX}"
+      serverUrl: "https://metrics.devsnc.com"
+      triggers:
+        skipScmCause: false
+        skipUpstreamCause: false
+  splunkJenkinsInstallation:
+    enabled: true
+    globalPipelineFilter: false
+    host: "splunk.cje.svc.cluster.local"
+    maxEventsBatchSize: 262144
+    metaDataConfig: |
+      jenkins_config.enabled=false
+      build_event.index=jenkins_statistics
+      queue_info.sourcetype=jenkins_queue
+      console_log.enabled=false
+    metadataItemSet:
+    - dataSource: "JENKINS_CONFIG"
+      keyName: "disabled"
+    - dataSource: "BUILD_EVENT"
+      keyName: "index"
+      value: "jenkins_statistics"
+    - dataSource: "QUEUE_INFO"
+      keyName: "sourcetype"
+      value: "jenkins_queue"
+    - dataSource: "CONSOLE_LOG"
+      keyName: "disabled"
+    metadataSource: "jenkins"
+    port: 8088
+    rawEventEnabled: true
+    retriesOnError: 3
+    scriptContent: "splunkins.archive(\"build*.err,env.properties\", null, false,\
+      \ \"1MB\")"
+    splunkAppUrl: "http://splunk.devsnc.com/en-US/app/splunk_app_jenkins/"
+    token: "XXXXXXXXXX"
+    useSSL: false
+  timestamper:
+    allPipelines: true
+    elapsedTimeFormat: "'<b>'HH:mm:ss.S'</b> '"
+    systemTimeFormat: "'<b>'HH:mm:ss'</b> '"
+  usageStatisticsCloudBees:
+    disabledJenkinsUsageStatistics: true
+    usageStatisticsCollected: true
+  warningsParsers:
+    consoleLogScanningPermitted: false
+tool:
+  cloudbeesPluginUsageAnalyzer:
+    enabled: true
+  git:
+    installations:
+    - home: "git"
+      name: "Default"
+  jdk:
+    installations:
+    - home: "/glide/java"
+      name: "JDK8"
+    - home: "/glide/java11"
+      name: "JDK11"
+    - home: "/glide/java"
+      name: "1.8"
+    - home: "/glide/java11"
+      name: "11.0"
+    - home: "/glide/java"
+      name: "jdk-1.8"
+    - home: "/glide/java11"
+      name: "jdk-11.0"
+  maven:
+    installations:
+    - home: "/mnt/jenkins/tools/maven/maven-3.6.1"
+      name: "maven-3"
+    - home: "/mnt/jenkins/tools/maven/maven-3.6.1"
+      name: "maven-3.6"
+    - name: "maven-3.1.1"
+      properties:
+      - installSource:
+          installers:
+          - maven:
+              id: "3.1.1"
+  mavenGlobalConfig:
+    globalSettingsProvider: "standard"
+    settingsProvider: "standard"
+  pipelineMaven:
+    triggerDownstreamUponResultAborted: false
+    triggerDownstreamUponResultFailure: false
+    triggerDownstreamUponResultNotBuilt: false
+    triggerDownstreamUponResultSuccess: true
+    triggerDownstreamUponResultUnstable: false
